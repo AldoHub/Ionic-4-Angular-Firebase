@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title><a routerLink='/'><ion-icon name="arrow-dropleft-circle"></ion-icon></a> New Post </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form (ngSubmit)="addPost(postsForm.value)" [formGroup]="postsForm">
+      
+      <p>Fill the form to add a new post.</p>  
+      <div class="form-control">
+        <label for="title">Title:</label>
+        <input type="text" formControlName="title">
+      </div>
+
+      <div class="form-control">
+        <label for="content">Content:</label>
+        <textarea formControlName="content"></textarea>
+      </div>
+
+      <div class="form-control">
+        <label for="cover" class="cover"><i class="fas fa-upload"></i> Choose a file</label>
+        <input type="file" name="cover" id="cover" (change)="handleInput($event)" formControlName="cover">
+      </div>
+      <input type="submit" [disabled]="!postsForm.valid" value="Submit">
+    </form>
+
+</ion-content>

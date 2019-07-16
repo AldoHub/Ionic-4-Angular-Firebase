@@ -74,4 +74,16 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --ion-background-color: radial-gradient(circle, rgba(208,202,245,1) 0%, rgba(255,255,255,1) 100%);
+  --ion-toolbar-color: #222;
+}
+
+ion-content{
+  --color: #222;
+ 
+}
+ion-action-sheet {
+  --background: #222 !important;
+  --color: #eee !important;
 }

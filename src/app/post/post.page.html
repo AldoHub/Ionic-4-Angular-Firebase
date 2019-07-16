@@ -1,0 +1,17 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title *ngIf="currentPost"><a routerLink='/'><ion-icon name="arrow-dropleft-circle"></ion-icon></a> {{currentPost.title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="currentPost" *ngIf="currentPost">
+    <ion-img src={{currentPost.cover}}></ion-img>
+    <h2>{{currentPost.title}}</h2>
+    <p>{{currentPost.content}}</p>
+  
+   <button (click)="presentActionSheet()">Controls</button>
+  
+  </div>
+  
+</ion-content>

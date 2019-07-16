@@ -1,0 +1,34 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title><a routerLink='/'><ion-icon name="arrow-dropleft-circle"></ion-icon></a> Edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form (ngSubmit)="updatePost(postsForm.value)" [formGroup]="postsForm">
+      
+        <p>Edit the post.</p>  
+        <div class="form-control">
+        
+          <ion-img src={{currentImage}}></ion-img>
+          <br/>
+          
+          <label for="cover" class="cover">Change file</label>
+          <input type="file" name="cover" id="cover" (change)="handleInput($event)">
+        </div>
+      
+        <div class="form-control">
+          <label for="title">Title:</label>
+          <input type="text" formControlName="title">
+        </div>
+
+        <div class="form-control">
+          <label for="content">Content:</label>
+          <textarea formControlName="content"></textarea>
+        </div>
+        
+      
+        <input type="submit" [disabled]="!postsForm.valid" value="Submit">
+      </form>
+  
+</ion-content>
